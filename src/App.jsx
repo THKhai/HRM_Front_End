@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import "./styles/App.css";
 import { ToastContainer } from 'react-toastify';
 import SignUpLogin from './components/SignUpLogin.jsx';
