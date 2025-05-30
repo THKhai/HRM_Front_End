@@ -1,0 +1,45 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\UNI\\personal project\\ptudhttthd-web-hrm\\HRM_WebApplication\\ptudhttthd-web-hrm.client\\ptudhttthd-web-hrm.client.esproj": {}
+  },
+  "projects": {
+    "D:\\UNI\\personal project\\ptudhttthd-web-hrm\\HRM_WebApplication\\ptudhttthd-web-hrm.client\\ptudhttthd-web-hrm.client.esproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UNI\\personal project\\ptudhttthd-web-hrm\\HRM_WebApplication\\ptudhttthd-web-hrm.client\\ptudhttthd-web-hrm.client.esproj",
+        "projectName": "ptudhttthd-web-hrm.client",
+        "projectPath": "D:\\UNI\\personal project\\ptudhttthd-web-hrm\\HRM_WebApplication\\ptudhttthd-web-hrm.client\\ptudhttthd-web-hrm.client.esproj",
+        "packagesPath": "C:\\Users\\tranh\\.nuget\\packages\\",
+        "outputPath": "D:\\UNI\\personal project\\ptudhttthd-web-hrm\\HRM_WebApplication\\ptudhttthd-web-hrm.client\\obj\\",
+        "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
+        "configFilePaths": [
+          "C:\\Users\\tranh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-none": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0-none": {
+          "targetAlias": "net6.0"
+        }
+      }
+    }
+  }
+}

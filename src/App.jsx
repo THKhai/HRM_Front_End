@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './Styles/App.css'
+import React, { useState, useEffect } from "react";
+import "./styles/App.css";
+import { ToastContainer } from 'react-toastify';
+import SignUpLogin from './components/SignUpLogin.jsx';
+import HomePage from './components/HomePage.jsx';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { EditProvider, RequestProvider } from './components/EditContext';
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [isAuthenticated, setIsAuthenticated] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    useEffect(() => {
+        const token = localStorage.getItem('jwt');
+        setIsAuthenticated(!!token);
+        setLoading(false);
+    }, []);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    return (
+        <EditProvider>
+            <Router>
+                <ToastContainer />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={isAuthenticated ? <Navigate to="/home" /> : <Navigate to="/signuplogin" />}
+                    />
+                    <Route path="/signuplogin" element={<SignUpLogin />} />
+                    <Route
+                        path="/home"
+                        element={isAuthenticated ? <RequestProvider> <HomePage /> </RequestProvider> : <Navigate to="/signuplogin" />}
+                    />
+                </Routes>
+            </Router>
+        </EditProvider>
+    );
 }
 
-export default App
+export default App;
